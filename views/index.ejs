@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Show and set Cookie</title>
+  <link href="/public/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1>Cookie Value:</h1>
+    <p><%= myCookie %></p>
+
+<!-- Form to set the cookie -->
+<form action="/setcookie" method="POST">
+  <div class="form-group">
+    <label for="cookieValue">Set cookie value:</label>
+    <input type="text" class="form-control" id="cookieValue" name="cookieValue">
+  </div>
+  <button type="submit" class="btn btn-primary">Set Cookie</button>
+</form>
+
+<!-- Button to delete the cookie -->
+<form action="/deletecookie" method="POST">
+  <button type="submit" class="btn btn-danger mt-3">Delete Cookie</button>
+</form>
+
+
+    <!-- Error message -->
+    <% if (error) { %>
+      <div class="alert alert-danger mt-3" role="alert">
+        <%= error %>
+      </div>
+    <% } %>
+  </div>
+</body>
+</html>
