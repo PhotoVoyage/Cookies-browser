@@ -40,13 +40,13 @@ app.post('/deletecookie', (req, res) => {
 //Set the main route to display the page
 app.get('/', (req, res) => {
   // Get the value of the cookie 'myCookie'
-  const miCookie = req.cookies.miCookie || 'No cookie set';
+  const myCookie = req.cookies.myCookie || 'No cookie set';
 
   // Define the 'error' variable as null
   let error = null;
 
   // Render the index.ejs page with the cookie value and the 'error' variable
-  res.render('index', { miCookie, error });
+  res.render('index', { myCookie, error });
 });
 
 
